@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dimas Prasetiyo — Web Developer</title>
+
+  <!-- css eskternal -->
+   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sora: ['Sora', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+</head>
+<body class="relative">
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav id="navbar">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-2 no-underline">
+        <span class="grad-text font-mono text-[1.05rem] font-extrabold">&lt;DP/&gt;</span>
+        <span class="hidden sm:block text-[0.75rem] font-mono" style="color:var(--muted)">Dimas Dwi Prasetiyo</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#home"      class="nav-link">Home</a>
+        <a href="#education" class="nav-link">Pendidikan</a>
+        <a href="#projects"  class="nav-link">Project</a>
+        <a href="#skills"    class="nav-link">Skills</a>
+        <a href="#contact"   class="nav-link">Contact</a>
+        <a href="mailto:ddimasddpprasetiyo@gmail.com" class="hire-btn">Hire Me</a>
+        <button class="theme-toggle-btn" aria-label="Toggle theme"><i class="theme-icon fa fa-sun"></i></button>
+      </div>
+
+      <!-- Mobile: theme + hamburger -->
+      <div class="md:hidden flex items-center gap-2">
+        <button class="theme-toggle-btn" aria-label="Toggle theme"><i class="theme-icon fa fa-sun"></i></button>
+        <button id="hamburger" class="p-2 bg-transparent border-none cursor-pointer" style="color:var(--light)">
+          <i class="fa fa-bars" style="font-size:1.1rem"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" style="background:rgba(17,21,32,0.98);border:1px solid var(--border);border-radius:1rem;margin-top:0.5rem;margin-bottom:1rem">
+      <div class="flex flex-col p-4 gap-1">
+        <a href="#home"      class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium no-underline transition-all duration-200" style="color:var(--light)">Home</a>
+        <a href="#education" class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium no-underline transition-all duration-200" style="color:var(--light)">Pendidikan</a>
+        <a href="#projects"  class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium no-underline transition-all duration-200" style="color:var(--light)">Project</a>
+        <a href="#skills"    class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium no-underline transition-all duration-200" style="color:var(--light)">Skills</a>
+        <a href="#contact"   class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium no-underline transition-all duration-200" style="color:var(--light)">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="home" class="grid-pattern min-h-screen flex items-center overflow-hidden relative">
+  <div class="orb" style="width:22rem;height:22rem;top:5rem;right:-3rem;background:var(--accent)"></div>
+  <div class="orb" style="width:17rem;height:17rem;bottom:5rem;left:-2rem;background:var(--accent2);opacity:0.08"></div>
+  <div class="orb" style="width:13rem;height:13rem;top:50%;left:30%;background:var(--accent3);opacity:0.06"></div>
+
+  <div class="max-w-6xl mx-auto px-6 py-24 w-full relative" style="z-index:1">
+    <div class="flex flex-col lg:flex-row items-center gap-16">
+
+      <!-- Text Content -->
+      <div class="flex-1 text-center lg:text-left order-2 lg:order-1">
+        <div class="section-label mb-5" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa fa-terminal mr-2"></i> Web Developer · Fullstack
+        </div>
+
+        <h1 class="font-extrabold leading-tight mb-4" style="font-size:clamp(2rem,5vw,3.5rem);color:var(--white)"
+            data-aos="fade-up" data-aos-delay="150">
+          Halo, Saya<br/>
+          <span class="grad-text">Dimas Dwi Prasetiyo</span>
+        </h1>
+
+        <div class="flex items-center justify-center lg:justify-start mb-6 min-h-[2rem] font-mono text-base" style="color:var(--muted)"
+             data-aos="fade-up" data-aos-delay="200">
+          <span id="typed-text"></span><span class="typed-cursor"></span>
+        </div>
+
+        <p class="text-sm leading-relaxed max-w-[31rem] mx-auto lg:mx-0 mb-8" style="color:var(--muted)"
+           data-aos="fade-up" data-aos-delay="250">
+        Seorang web developer yang berfokus pada pembangunan aplikasi web modern, scalable, dan efisien. Berpengalaman dalam pengembangan fullstack, mencakup perancangan database, pengembangan backend, hingga implementasi antarmuka yang intuitif dan responsif.
+        Mengutamakan clean code, struktur sistem yang rapi, serta performa aplikasi untuk menghasilkan solusi digital yang optimal dan mudah dikembangkan.
+        </p>
+
+        <!-- Info Pills -->
+        <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-8"
+             data-aos="fade-up" data-aos-delay="300">
+          <span class="info-pill">
+            <i class="fa fa-map-marker-alt" style="color:var(--accent);font-size:0.7rem"></i>
+            Batam, Kepulauan Riau
+          </span>
+          <a href="mailto:ddimasddpprasetiyo@gmail.com" class="info-pill">
+            <i class="fa fa-envelope" style="color:var(--accent);font-size:0.7rem"></i>
+            ddimasddpprasetiyo@gmail.com
+          </a>
+          <span class="status-pill">
+            <span class="pulse-dot"></span> Open to Work
+          </span>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-3 justify-center lg:justify-start"
+             data-aos="fade-up" data-aos-delay="350">
+          <a href="https://github.com/Dimas01102" target="_blank" class="btn-primary">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/dimas-dwi-prasetiyo-13706820b/" target="_blank" class="btn-secondary li">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="#contact" class="btn-secondary ct">
+            <i class="fa fa-paper-plane"></i> Contact Me
+          </a>
+        </div>
+      </div>
+
+      <!-- Avatar -->
+      <!-- FIX: overflow:visible pada container luar agar badge tidak terpotong -->
+      <div class="flex-shrink-0 order-1 lg:order-2" data-aos="zoom-in" data-aos-delay="200">
+        <div style="position:relative;display:inline-block;padding:2.5rem 3rem;">
+
+          <!-- Bingkai foto utama -->
+          <div class="avatar-frame-wrap">
+            <div class="avatar-frame">
+              <span class="av-corner tl"></span>
+              <span class="av-corner tr"></span>
+              <span class="av-corner bl"></span>
+              <span class="av-corner br"></span>
+              <div class="avatar-frame-inner">
+                <img src="assets/images/foto.jpeg" alt="Dimas Dwi Prasetiyo" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Badge atas-kanan — di luar avatar-frame-wrap agar tidak terpotong -->
+          <div class="badge-float-1"
+               style="position:absolute;top:0.5rem;right:0;
+                      padding:0.35rem 0.75rem;border-radius:100px;
+                      font-size:0.72rem;font-family:'JetBrains Mono',monospace;font-weight:600;
+                      color:var(--accent);background:var(--surface);border:1px solid var(--border);
+                      white-space:nowrap;z-index:10;">
+            &lt;Fullstack/&gt;
+          </div>
+
+          <!-- Badge bawah-kiri — di luar avatar-frame-wrap agar tidak terpotong -->
+          <div class="badge-float-2"
+               style="position:absolute;bottom:0.5rem;left:0;
+                      padding:0.35rem 0.75rem;border-radius:100px;
+                      font-size:0.72rem;font-family:'JetBrains Mono',monospace;font-weight:600;
+                      color:var(--accent3);background:var(--surface);border:1px solid var(--border);
+                      white-space:nowrap;z-index:10;">
+            { PHP · Go · JS }
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-20"
+         data-aos="fade-up" data-aos-delay="400">
+      <div class="stat-card">
+        <div class="grad-text text-[1.75rem] font-extrabold mb-1">5+</div>
+        <div class="text-[0.74rem]" style="color:var(--muted)">Projects Selesai</div>
+      </div>
+      <div class="stat-card">
+        <div class="grad-text text-[1.75rem] font-extrabold mb-1">8+</div>
+        <div class="text-[0.74rem]" style="color:var(--muted)">Teknologi</div>
+      </div>
+      <div class="stat-card">
+        <div class="grad-text text-[1.75rem] font-extrabold mb-1">2+</div>
+        <div class="text-[0.74rem]" style="color:var(--muted)">Tahun Belajar</div>
+      </div>
+      <div class="stat-card">
+        <div class="grad-text text-[1.75rem] font-extrabold mb-1">∞</div>
+        <div class="text-[0.74rem]" style="color:var(--muted)">Semangat Belajar</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div style="position:absolute;bottom:2rem;left:50%;animation:bounce-y 1.6s ease-in-out infinite;display:flex;flex-direction:column;align-items:center;gap:0.4rem;color:var(--muted)">
+    <span class="font-mono text-[0.68rem]">scroll</span>
+    <i class="fa fa-chevron-down text-[0.68rem]"></i>
+  </div>
+</section>
+
+<!-- ═══════════════ EDUCATION ═══════════════ -->
+<section id="education" class="relative overflow-hidden" style="padding:6rem 0">
+  <div class="orb" style="width:20rem;height:20rem;top:0;left:-3rem;background:var(--accent2);opacity:0.06"></div>
+  <div class="max-w-6xl mx-auto px-6 relative" style="z-index:1">
+    <div class="text-center mb-16">
+      <div class="section-label mb-3" data-aos="fade-up">
+        <i class="fa fa-graduation-cap mr-2"></i> Riwayat Pendidikan
+      </div>
+      <h2 class="font-extrabold" style="font-size:clamp(1.75rem,4vw,2.5rem);color:var(--white)" data-aos="fade-up" data-aos-delay="100">
+        Perjalanan <span class="grad-text">Akademik</span>
+      </h2>
+      <p class="text-sm mt-3 max-w-[28rem] mx-auto" style="color:var(--muted)"
+         data-aos="fade-up" data-aos-delay="150">
+        Fondasi pendidikan yang membentuk kemampuan teknis dan analitis saya sebagai developer.
+      </p>
+    </div>
+
+    <div class="max-w-[48rem] mx-auto">
+
+      <!-- Timeline item 1 -->
+      <div class="flex gap-6 mb-8" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex flex-col items-center flex-shrink-0">
+          <div class="timeline-dot"></div>
+          <div class="flex-1 w-px mt-2" style="background:linear-gradient(to bottom,var(--accent),transparent)"></div>
+        </div>
+        <div class="flex-1 pb-8">
+          <div class="card-hover p-6 rounded-2xl" style="background:var(--surface);border:1px solid var(--border)">
+            <div class="flex flex-wrap justify-between gap-2 mb-3">
+              <div>
+                <span class="tech-chip" style="color:var(--accent);background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.3)">
+                  <i class="fa fa-university mr-1"></i> Perguruan Tinggi
+                </span>
+                <h3 class="text-[1.1rem] font-bold mt-2" style="color:var(--white)">Politeknik Negeri Batam</h3>
+                <p class="text-sm font-medium" style="color:var(--accent)">D4 Software Engineering</p>
+              </div>
+              <span class="font-mono text-[0.72rem] px-3 py-1 rounded-full self-start" style="color:var(--muted);background:var(--card);border:1px solid var(--border)">
+                2025 — 2029
+              </span>
+            </div>
+            <p class="text-sm leading-relaxed" style="color:var(--muted)">
+              Menempuh pendidikan D4 Software Engineering dengan fokus pada pengembangan web fullstack, rekayasa perangkat lunak, dan desain sistem. Aktif mengerjakan proyek berbasis industri sebagai bagian dari kurikulum.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="skill-badge"><i class="fa fa-code text-[0.7rem]" style="color:var(--accent)"></i> Web Dev</span>
+              <span class="skill-badge"><i class="fa fa-database text-[0.7rem]" style="color:var(--accent)"></i> Database</span>
+              <span class="skill-badge"><i class="fa fa-project-diagram text-[0.7rem]" style="color:var(--accent)"></i> Software Engineering</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline item 2 -->
+      <div class="flex gap-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex flex-col items-center flex-shrink-0">
+          <div class="timeline-dot" style="background:linear-gradient(135deg,#7C5FF4,#00D4AA)"></div>
+        </div>
+        <div class="flex-1">
+          <div class="card-hover p-6 rounded-2xl" style="background:var(--surface);border:1px solid var(--border)">
+            <div class="flex flex-wrap justify-between gap-2 mb-3">
+              <div>
+                <span class="tech-chip" style="color:var(--accent2);background:rgba(124,95,244,0.1);border:1px solid rgba(124,95,244,0.3)">
+                  <i class="fa fa-school mr-1"></i> SMA/SMK
+                </span>
+                <h3 class="text-[1.1rem] font-bold mt-2" style="color:var(--white)">SMK — Rekayasa Perangkat Lunak</h3>
+                <p class="text-sm font-medium" style="color:var(--accent2)">Jurusan Rekayasa Perangkat Lunak (RPL)</p>
+              </div>
+              <span class="font-mono text-[0.72rem] px-3 py-1 rounded-full self-start" style="color:var(--muted);background:var(--card);border:1px solid var(--border)">
+                2022 — 2025
+              </span>
+            </div>
+            <p class="text-sm leading-relaxed" style="color:var(--muted)">
+              Menempuh pendidikan kejuruan dengan jurusan Rekayasa Perangkat Lunak. Di sinilah awal mula ketertarikan saya dalam dunia pemrograman dan pengembangan aplikasi dimulai.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="skill-badge"><i class="fa fa-code text-[0.7rem]" style="color:var(--accent2)"></i> Dasar Pemrograman</span>
+              <span class="skill-badge"><i class="fa fa-desktop text-[0.7rem]" style="color:var(--accent2)"></i> Desain Web</span>
+              <span class="skill-badge"><i class="fa fa-cogs text-[0.7rem]" style="color:var(--accent2)"></i> Algoritma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PROJECTS ═══════════════ -->
+<section id="projects" class="relative" style="padding:6rem 0;background:linear-gradient(to bottom,var(--bg),var(--surface),var(--bg))">
+  <div class="orb" style="width:22rem;height:22rem;top:50%;right:-4rem;background:var(--accent);opacity:0.06;transform:translateY(-50%)"></div>
+  <div class="max-w-6xl mx-auto px-6 relative" style="z-index:1">
+    <div class="text-center mb-16">
+      <div class="section-label mb-3" data-aos="fade-up">
+        <i class="fa fa-folder-open mr-2"></i> Portfolio
+      </div>
+      <h2 class="font-extrabold" style="font-size:clamp(1.75rem,4vw,2.5rem);color:var(--white)" data-aos="fade-up" data-aos-delay="100">
+        Featured <span class="grad-text">Projects</span>
+      </h2>
+      <p class="text-sm mt-3 max-w-[28rem] mx-auto" style="color:var(--muted)"
+         data-aos="fade-up" data-aos-delay="150">
+        Beberapa proyek yang telah saya bangun dari awal — dari desain database hingga antarmuka pengguna.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Project 1 -->
+      <div class="card-hover p-6 rounded-2xl relative overflow-hidden" style="background:var(--surface);border:1px solid var(--border)"
+           data-aos="fade-up" data-aos-delay="100">
+        <div style="position:absolute;top:0;right:0;width:8rem;height:8rem;border-radius:50%;filter:blur(40px);opacity:0.1;background:#4F8EF7;transform:translate(30%,-30%);pointer-events:none"></div>
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.2)">🚗</div>
+          <div class="flex gap-2">
+            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <h3 class="text-[1.1rem] font-bold mb-2" style="color:var(--white)">Sistem Rental Mobil</h3>
+        <p class="text-sm leading-relaxed mb-4" style="color:var(--muted)">
+          Aplikasi web fullstack untuk manajemen penyewaan kendaraan. Fitur meliputi pemesanan, manajemen armada, pelacakan ketersediaan, dan sistem pembayaran terintegrasi.
+        </p>
+        <div class="flex flex-wrap gap-1">
+          <span class="tech-chip" style="color:var(--accent);background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.25)">PHP</span>
+          <span class="tech-chip" style="color:var(--accent);background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.25)">Laravel</span>
+          <span class="tech-chip" style="color:var(--accent);background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.25)">MySQL</span>
+          <span class="tech-chip" style="color:var(--muted);background:var(--card);border:1px solid var(--border)">Tailwind CSS</span>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="card-hover p-6 rounded-2xl relative overflow-hidden" style="background:var(--surface);border:1px solid var(--border)"
+           data-aos="fade-up" data-aos-delay="150">
+        <div style="position:absolute;top:0;right:0;width:8rem;height:8rem;border-radius:50%;filter:blur(40px);opacity:0.1;background:#7C5FF4;transform:translate(30%,-30%);pointer-events:none"></div>
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(124,95,244,0.12);border:1px solid rgba(124,95,244,0.2)">⚽</div>
+          <div class="flex gap-2">
+            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <h3 class="text-[1.1rem] font-bold mb-2" style="color:var(--white)">Booking Futsal</h3>
+        <p class="text-sm leading-relaxed mb-4" style="color:var(--muted)">
+          Platform booking lapangan futsal online dengan sistem kalender real-time, manajemen jadwal, konfirmasi otomatis via notifikasi, dan dashboard admin yang komprehensif.
+        </p>
+        <div class="flex flex-wrap gap-1">
+          <span class="tech-chip" style="color:var(--accent2);background:rgba(124,95,244,0.1);border:1px solid rgba(124,95,244,0.25)">PHP</span>
+          <span class="tech-chip" style="color:var(--accent2);background:rgba(124,95,244,0.1);border:1px solid rgba(124,95,244,0.25)">MySQL</span>
+          <span class="tech-chip" style="color:var(--accent2);background:rgba(124,95,244,0.1);border:1px solid rgba(124,95,244,0.25)">JavaScript</span>
+          <span class="tech-chip" style="color:var(--muted);background:var(--card);border:1px solid var(--border)">Bootstrap</span>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="card-hover p-6 rounded-2xl relative overflow-hidden" style="background:var(--surface);border:1px solid var(--border)"
+           data-aos="fade-up" data-aos-delay="200">
+        <div style="position:absolute;top:0;right:0;width:8rem;height:8rem;border-radius:50%;filter:blur(40px);opacity:0.1;background:#00D4AA;transform:translate(30%,-30%);pointer-events:none"></div>
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(0,212,170,0.12);border:1px solid rgba(0,212,170,0.2)">📋</div>
+          <div class="flex gap-2">
+            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent3)'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent3)'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <h3 class="text-[1.1rem] font-bold mb-2" style="color:var(--white)">E-Quotation / RFQ System</h3>
+        <p class="text-sm leading-relaxed mb-4" style="color:var(--muted)">
+          Sistem pengelolaan Request for Quotation berbasis web untuk memudahkan proses pengadaan barang dan jasa. Dilengkapi fitur perbandingan harga, approval workflow, dan export PDF.
+        </p>
+        <div class="flex flex-wrap gap-1">
+          <span class="tech-chip" style="color:var(--accent3);background:rgba(0,212,170,0.1);border:1px solid rgba(0,212,170,0.25)">Laravel</span>
+          <span class="tech-chip" style="color:var(--accent3);background:rgba(0,212,170,0.1);border:1px solid rgba(0,212,170,0.25)">Tailwind CSS</span>
+          <span class="tech-chip" style="color:var(--accent3);background:rgba(0,212,170,0.1);border:1px solid rgba(0,212,170,0.25)">MySQL</span>
+          <span class="tech-chip" style="color:var(--muted);background:var(--card);border:1px solid var(--border)">JavaScript</span>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="card-hover p-6 rounded-2xl relative overflow-hidden" style="background:var(--surface);border:1px solid var(--border)"
+           data-aos="fade-up" data-aos-delay="250">
+        <div style="position:absolute;top:0;right:0;width:8rem;height:8rem;border-radius:50%;filter:blur(40px);opacity:0.1;background:#F7934F;transform:translate(30%,-30%);pointer-events:none"></div>
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(247,147,79,0.12);border:1px solid rgba(247,147,79,0.2)">🎓</div>
+          <div class="flex gap-2">
+            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='#FBBF24'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='#FBBF24'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <h3 class="text-[1.1rem] font-bold mb-2" style="color:var(--white)">Project PBL — Semester 1</h3>
+        <p class="text-sm leading-relaxed mb-4" style="color:var(--muted)">
+          Pengajuan Dokumen Warga Digital adalah aplikasi web yang saya kembangkan untuk mempermudah proses administrasi masyarakat secara online. Sistem ini memungkinkan pengguna mengajukan berbagai dokumen secara digital dengan proses yang terstruktur, efisien, dan transparan.
+          Dibangun menggunakan teknologi web modern, aplikasi ini mengintegrasikan fitur manajemen data, validasi form, serta alur pengajuan yang terorganisir untuk meningkatkan pengalaman pengguna.
+        </p>
+        <div class="flex flex-wrap gap-1">
+          <span class="tech-chip" style="color:#FBBF24;background:rgba(247,147,79,0.1);border:1px solid rgba(247,147,79,0.25)">PHP</span>
+          <span class="tech-chip" style="color:#FBBF24;background:rgba(247,147,79,0.1);border:1px solid rgba(247,147,79,0.25)">MySQL</span>
+          <span class="tech-chip" style="color:#FBBF24;background:rgba(247,147,79,0.1);border:1px solid rgba(247,147,79,0.25)">HTML/CSS</span>
+          <span class="tech-chip" style="color:#FBBF24;background:rgba(247,147,79,0.1);border:1px solid rgba(247,147,79,0.25)">Bootstrap</span>
+          <span class="tech-chip" style="color:var(--muted);background:var(--card);border:1px solid var(--border)">JavaScript</span>
+        </div>
+      </div>
+
+      <!-- Project 5  -->
+      <div class="card-hover p-6 rounded-2xl relative overflow-hidden" style="background:var(--surface);border:1px solid rgba(236,72,153,0.3)"
+           data-aos="fade-up" data-aos-delay="300">
+        <div style="position:absolute;top:0;right:0;width:8rem;height:8rem;border-radius:50%;filter:blur(40px);opacity:0.12;background:#EC4899;transform:translate(30%,-30%);pointer-events:none"></div>
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(236,72,153,0.12);border:1px solid rgba(236,72,153,0.22)">🛒</div>
+          <div class="flex gap-2">
+            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='#EC4899'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='#EC4899'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <h3 class="text-[1.1rem] font-bold mb-2" style="color:var(--white)">E-Commerce Platform</h3>
+        <p class="text-sm leading-relaxed mb-4" style="color:var(--muted)">
+          Platform belanja online fullstack dengan katalog produk, keranjang belanja, manajemen order, integrasi payment gateway Midtrans, dashboard seller &amp; admin, serta sistem review produk.
+        </p>
+        <div class="flex flex-wrap gap-1">
+          <span class="tech-chip" style="color:#EC4899;background:rgba(236,72,153,0.1);border:1px solid rgba(236,72,153,0.25)">PHP</span>
+          <span class="tech-chip" style="color:#EC4899;background:rgba(236,72,153,0.1);border:1px solid rgba(236,72,153,0.25)">CSS</span>
+          <span class="tech-chip" style="color:#EC4899;background:rgba(236,72,153,0.1);border:1px solid rgba(236,72,153,0.25)">MySQL</span>
+          <span class="tech-chip" style="color:var(--muted);background:var(--card);border:1px solid var(--border)">Midtrans</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SKILLS ═══════════════ -->
+<section id="skills" class="relative overflow-hidden" style="padding:6rem 0">
+  <div class="orb" style="width:18rem;height:18rem;bottom:0;right:20%;background:var(--accent3);opacity:0.06"></div>
+  <div class="max-w-6xl mx-auto px-6 relative" style="z-index:1">
+    <div class="text-center mb-16">
+      <div class="section-label mb-3" data-aos="fade-up">
+        <i class="fa fa-layer-group mr-2"></i> Keahlian
+      </div>
+      <h2 class="font-extrabold" style="font-size:clamp(1.75rem,4vw,2.5rem);color:var(--white)" data-aos="fade-up" data-aos-delay="100">
+        Technical <span class="grad-text">Skills</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <!-- Programming Languages -->
+      <div class="p-6 rounded-2xl" style="background:var(--surface);border:1px solid var(--border)" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.2)">
+            <i class="fa fa-code text-sm" style="color:var(--accent)"></i>
+          </div>
+          <h3 class="font-bold" style="color:var(--white)">Programming Languages</h3>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div>
+            <div class="flex justify-between text-xs mb-1">
+              <span class="font-medium" style="color:var(--light)">🐘 PHP</span>
+              <span class="font-mono" style="color:var(--accent)">85%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="85"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-1">
+              <span class="font-medium" style="color:var(--light)">🐹 Golang</span>
+              <span class="font-mono" style="color:var(--accent)">70%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="70"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-1">
+              <span class="font-medium" style="color:var(--light)">🟡 JavaScript</span>
+              <span class="font-mono" style="color:var(--accent)">75%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="75"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-1">
+              <span class="font-medium" style="color:var(--light)">🐍 Python</span>
+              <span class="font-mono" style="color:var(--accent)">60%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="60"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-1">
+              <span class="font-medium" style="color:var(--light)">⚙️ C / C++</span>
+              <span class="font-mono" style="color:var(--accent)">55%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="55"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frameworks & Tools -->
+      <div class="p-6 rounded-2xl" style="background:var(--surface);border:1px solid var(--border)" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(124,95,244,0.12);border:1px solid rgba(124,95,244,0.2)">
+            <i class="fa fa-tools text-sm" style="color:var(--accent2)"></i>
+          </div>
+          <h3 class="font-bold" style="color:var(--white)">Frameworks & Tools</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent)"></span> Laravel</span>
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent)"></span> CodeIgniter</span>
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent2)"></span> React.js</span>
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent2)"></span> Node.js</span>
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent2)"></span> Express.js</span>
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent3)"></span> MySQL</span>
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent3)"></span> Git & GitHub</span>
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:#FBBF24"></span> Tailwind CSS</span>
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:#FBBF24"></span> Bootstrap</span>
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:#F7934F"></span> REST API</span>
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:#F7934F"></span> Postman</span>
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent)"></span> VS Code</span>
+
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="p-6 rounded-2xl" style="background:var(--surface);border:1px solid var(--border)" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(0,212,170,0.12);border:1px solid rgba(0,212,170,0.2)">
+            <i class="fa fa-brain text-sm" style="color:var(--accent3)"></i>
+          </div>
+          <h3 class="font-bold" style="color:var(--white)">Soft Skills</h3>
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex items-center gap-3 p-3 rounded-xl cursor-default transition-colors duration-200" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background:rgba(79,142,247,0.1)">🤝</div>
+            <div><div class="text-sm font-medium" style="color:var(--light)">Teamwork & Kolaborasi</div><div class="text-[0.72rem]" style="color:var(--muted)">Bekerja efektif dalam tim</div></div>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl cursor-default transition-colors duration-200" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background:rgba(124,95,244,0.1)">🧩</div>
+            <div><div class="text-sm font-medium" style="color:var(--light)">Problem Solving</div><div class="text-[0.72rem]" style="color:var(--muted)">Analitis dan berpikir kritis</div></div>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl cursor-default transition-colors duration-200" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background:rgba(0,212,170,0.1)">📚</div>
+            <div><div class="text-sm font-medium" style="color:var(--light)">Fast Learner</div><div class="text-[0.72rem]" style="color:var(--muted)">Adaptif terhadap teknologi baru</div></div>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl cursor-default transition-colors duration-200" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background:rgba(247,147,79,0.1)">💬</div>
+            <div><div class="text-sm font-medium" style="color:var(--light)">Komunikasi</div><div class="text-[0.72rem]" style="color:var(--muted)">Jelas dan efektif</div></div>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl cursor-default transition-colors duration-200" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background:rgba(79,142,247,0.1)">⏰</div>
+            <div><div class="text-sm font-medium" style="color:var(--light)">Manajemen Waktu</div><div class="text-[0.72rem]" style="color:var(--muted)">Disiplin dan tepat deadline</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact" class="relative overflow-hidden" style="padding:6rem 0;background:linear-gradient(to bottom,var(--bg),var(--surface))">
+  <div class="orb" style="width:22rem;height:22rem;top:0;left:50%;background:var(--accent2);opacity:0.07;transform:translateX(-50%)"></div>
+  <div class="max-w-6xl mx-auto px-6 relative" style="z-index:1">
+    <div class="text-center mb-16">
+      <div class="section-label mb-3" data-aos="fade-up">
+        <i class="fa fa-envelope mr-2"></i> Hubungi Saya
+      </div>
+      <h2 class="font-extrabold" style="font-size:clamp(1.75rem,4vw,2.5rem);color:var(--white)" data-aos="fade-up" data-aos-delay="100">
+        Let's <span class="grad-text">Connect</span>
+      </h2>
+      <p class="text-sm mt-3 max-w-[28rem] mx-auto" style="color:var(--muted)"
+         data-aos="fade-up" data-aos-delay="150">
+        Terbuka untuk peluang kolaborasi, freelance, ataupun diskusi seputar teknologi. Jangan ragu untuk menghubungi saya!
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+      <!-- Contact Info -->
+      <div data-aos="fade-right" data-aos-delay="100">
+        <h3 class="text-xl font-bold mb-6" style="color:var(--white)">Informasi Kontak</h3>
+        <div class="flex flex-col gap-3 mb-8">
+          <a href="mailto:ddimasddpprasetiyo@gmail.com" class="contact-card">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.2)">
+              <i class="fa fa-envelope" style="color:var(--accent)"></i>
+            </div>
+            <div class="flex-1">
+              <div class="text-[0.7rem] mb-0.5" style="color:var(--muted)">Email</div>
+              <div class="text-sm font-medium" style="color:var(--light)">ddimasddpprasetiyo@gmail.com</div>
+            </div>
+            <i class="fa fa-arrow-right text-xs" style="color:var(--muted)"></i>
+          </a>
+          <a href="https://github.com/Dimas01102" target="_blank" class="contact-card">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(124,95,244,0.12);border:1px solid rgba(124,95,244,0.2)">
+              <i class="fab fa-github" style="color:var(--accent2)"></i>
+            </div>
+            <div class="flex-1">
+              <div class="text-[0.7rem] mb-0.5" style="color:var(--muted)">GitHub</div>
+              <div class="text-sm font-medium" style="color:var(--light)">github.com/dimasprasetiyo</div>
+            </div>
+            <i class="fa fa-arrow-right text-xs" style="color:var(--muted)"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/dimas-dwi-prasetiyo-13706820b/" target="_blank" class="contact-card">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(0,212,170,0.12);border:1px solid rgba(0,212,170,0.2)">
+              <i class="fab fa-linkedin" style="color:var(--accent3)"></i>
+            </div>
+            <div class="flex-1">
+              <div class="text-[0.7rem] mb-0.5" style="color:var(--muted)">LinkedIn</div>
+              <div class="text-sm font-medium" style="color:var(--light)">linkedin.com/in/dimasprasetiyo</div>
+            </div>
+            <i class="fa fa-arrow-right text-xs" style="color:var(--muted)"></i>
+          </a>
+        </div>
+        <div class="flex items-center gap-4 p-4 rounded-2xl" style="background:rgba(79,142,247,0.05);border:1px solid rgba(79,142,247,0.15)">
+          <i class="fa fa-map-marker-alt text-lg" style="color:var(--accent)"></i>
+          <div>
+            <div class="text-[0.7rem]" style="color:var(--muted)">Lokasi</div>
+            <div class="text-sm font-medium" style="color:var(--light)">Batam, Kepulauan Riau, Indonesia 🇮🇩</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div data-aos="fade-left" data-aos-delay="200">
+        <div class="p-8 rounded-2xl" style="background:var(--surface);border:1px solid var(--border)">
+          <h3 class="text-xl font-bold mb-6" style="color:var(--white)">Kirim Pesan</h3>
+
+          <div id="form-loading" class="form-feedback">
+            <i class="fa fa-circle-notch fa-spin"></i>
+            <span>Mengirim pesan...</span>
+          </div>
+          <div id="form-success" class="form-feedback">
+            <i class="fa fa-check-circle"></i>
+            <span>Pesan berhasil terkirim! Saya akan segera membalas.</span>
+          </div>
+          <div id="form-error" class="form-feedback">
+            <i class="fa fa-exclamation-circle"></i>
+            <span>Terjadi kesalahan. Silakan coba lagi.</span>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <div>
+              <label class="block text-[0.74rem] mb-1.5" style="color:var(--muted)">Nama Lengkap *</label>
+              <input type="text" id="contact-name" placeholder="John Doe" class="form-input"/>
+            </div>
+            <div>
+              <label class="block text-[0.74rem] mb-1.5" style="color:var(--muted)">Email *</label>
+              <input type="email" id="contact-email" placeholder="john@example.com" class="form-input"/>
+            </div>
+            <div>
+              <label class="block text-[0.74rem] mb-1.5" style="color:var(--muted)">Subjek</label>
+              <input type="text" id="contact-subject" placeholder="Collaboration / Freelance / etc." class="form-input"/>
+            </div>
+            <div>
+              <label class="block text-[0.74rem] mb-1.5" style="color:var(--muted)">Pesan *</label>
+              <textarea id="contact-message" rows="4" placeholder="Halo Dimas, saya ingin..." class="form-input" style="resize:none"></textarea>
+            </div>
+            <button id="submit-btn" onclick="submitForm()">
+              <i class="fa fa-paper-plane mr-2"></i> Kirim Pesan
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="max-w-6xl mx-auto px-6 pt-14 pb-10 relative" style="z-index:1">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-0">
+
+      <!-- Col 1 — Brand -->
+      <div>
+        <div class="footer-brand mb-3">&lt;Dimas Dwi Prasetiyo /&gt;</div>
+        <p class="text-[0.8rem] leading-relaxed max-w-[20rem] mb-4" style="color:var(--muted)">
+          Web developer berbasis di Batam yang bersemangat membangun solusi digital yang inovatif dan efisien.
+        </p>
+        <div class="inline-flex items-center gap-2 text-[0.74rem] px-3 py-1.5 rounded-full" style="color:var(--accent3);background:rgba(0,212,170,0.07);border:1px solid rgba(0,212,170,0.25)">
+          <span class="pulse-dot"></span> Available for freelance
+        </div>
+      </div>
+
+      <!-- Col 2 — Navigation -->
+      <div>
+        <div class="footer-col-title">Navigasi</div>
+        <div class="grid grid-cols-2 gap-x-4">
+          <a href="#home"      class="footer-link">Home</a>
+          <a href="#skills"    class="footer-link">Skills</a>
+          <a href="#education" class="footer-link">Pendidikan</a>
+          <a href="#contact"   class="footer-link">Contact</a>
+          <a href="#projects"  class="footer-link">Projects</a>
+          <a href="mailto:ddimasddpprasetiyo@gmail.com" class="footer-link">Hire Me</a>
+        </div>
+      </div>
+
+      <!-- Col 3 — Stack -->
+      <div>
+        <div class="footer-col-title">Tech Stack</div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="footer-chip" style="color:var(--accent);background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.22)">PHP</span>
+          <span class="footer-chip" style="color:var(--accent2);background:rgba(124,95,244,0.1);border:1px solid rgba(124,95,244,0.22)">Laravel</span>
+          <span class="footer-chip" style="color:var(--accent3);background:rgba(0,212,170,0.1);border:1px solid rgba(0,212,170,0.22)">Golang</span>
+          <span class="footer-chip" style="color:#FBBF24;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.22)">JavaScript</span>
+          <span class="footer-chip" style="color:var(--accent);background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.22)">Node.js</span>
+          <span class="footer-chip" style="color:var(--accent2);background:rgba(124,95,244,0.1);border:1px solid rgba(124,95,244,0.22)">React.js</span>
+          <span class="footer-chip" style="color:var(--accent3);background:rgba(0,212,170,0.1);border:1px solid rgba(0,212,170,0.22)">MySQL</span>
+          <span class="footer-chip" style="color:#FBBF24;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.22)">Tailwind</span>
+          <span class="footer-chip" style="color:#EC4899;background:rgba(236,72,153,0.1);border:1px solid rgba(236,72,153,0.22)">Midtrans</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <!-- Bottom bar -->
+    <div class="flex flex-wrap items-center justify-between gap-5">
+      <div class="text-[0.78rem]" style="color:var(--muted)">
+        &copy; <span id="year"></span>
+        <span class="font-semibold" style="color:var(--light)"> Dimas Dwi Prasetiyo</span>
+        &mdash; Crafted with <span style="color:#EC4899">❤️</span> &amp; <span style="color:#FBBF24">☕</span> in Batam 🇮🇩
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="https://github.com/Dimas01102"      target="_blank" class="footer-social gh" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/dimas-dwi-prasetiyo-13706820b/" target="_blank" class="footer-social li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:ddimasddpprasetiyo@gmail.com"                    class="footer-social em" aria-label="Email"><i class="fa fa-envelope"></i></a>
+      </div>
+
+      <a href="#home" class="footer-top-btn">
+        <i class="fa fa-arrow-up text-[0.65rem]"></i> Back to top
+      </a>
+    </div>
+
+    <div class="text-center mt-8 pt-5" style="border-top:1px solid var(--border)">
+      <span class="text-[0.67rem] font-mono" style="color:var(--muted)">
+        Built with &nbsp;
+        <span style="color:var(--accent)">PHP</span> ·
+        <span style="color:var(--accent2)">Laravel</span> ·
+        <span style="color:var(--accent3)">Node.js</span> ·
+        <span style="color:#FBBF24">JavaScript</span>
+        &nbsp;— <span style="color:var(--light)">Open to new opportunities</span>
+      </span>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ═══════════════ SCRIPTS ═══════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+
+</body>
+</html>
