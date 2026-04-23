@@ -87,7 +87,7 @@
 </nav>
 
 <!-- ═══════════════ HERO ═══════════════ -->
-<section id="home" class="grid-pattern min-h-screen flex items-center overflow-hidden relative">
+<section id="home" class="grid-pattern min-h-screen flex items-center relative" style="overflow:visible">
   <div class="orb" style="width:22rem;height:22rem;top:5rem;right:-3rem;background:var(--accent)"></div>
   <div class="orb" style="width:17rem;height:17rem;bottom:5rem;left:-2rem;background:var(--accent2);opacity:0.08"></div>
   <div class="orb" style="width:13rem;height:13rem;top:50%;left:30%;background:var(--accent3);opacity:0.06"></div>
@@ -149,8 +149,13 @@
         </div>
       </div>
 
-      <!-- Avatar -->
+      <!-- ═══ AVATAR — FIXED MOBILE ═══ -->
       <div class="flex-shrink-0 order-1 lg:order-2" data-aos="zoom-in" data-aos-delay="200">
+        <!-- 
+          Wrapper pakai class avatar-badge-container.
+          overflow: visible di CSS agar badge tidak terpotong.
+          Di mobile, padding dikurangi dan badge diposisikan ulang.
+        -->
         <div class="avatar-badge-container">
 
           <!-- Bingkai foto utama -->
@@ -166,28 +171,21 @@
             </div>
           </div>
 
-          <!-- Badge atas-kanan — di luar avatar-frame-wrap agar tidak terpotong -->
-          <div class="badge-float-1"
-               style="position:absolute;top:0.5rem;right:0;
-                      padding:0.35rem 0.75rem;border-radius:100px;
-                      font-size:0.72rem;font-family:'JetBrains Mono',monospace;font-weight:600;
-                      color:var(--accent);background:var(--surface);border:1px solid var(--border);
-                      white-space:nowrap;z-index:10;">
-            &lt;Fullstack/&gt;
-          </div>
+          <!-- Badge atas-kanan (absolute di desktop, inline di mobile) -->
+          <div class="avatar-badges-row">
+            <div class="badge-float-1 avatar-badge avatar-badge--top">
+              &lt;Fullstack/&gt;
+            </div>
 
-          <!-- Badge bawah-kiri — di luar avatar-frame-wrap-->
-          <div class="badge-float-2"
-               style="position:absolute;bottom:0.5rem;left:0;
-                      padding:0.35rem 0.75rem;border-radius:100px;
-                      font-size:0.72rem;font-family:'JetBrains Mono',monospace;font-weight:600;
-                      color:var(--accent3);background:var(--surface);border:1px solid var(--border);
-                      white-space:nowrap;z-index:10;">
-            { PHP · Go · JS }
+            <!-- Badge bawah-kiri -->
+            <div class="badge-float-2 avatar-badge avatar-badge--bottom">
+              { PHP · Go · JS }
+            </div>
           </div>
 
         </div>
       </div>
+      <!-- ═══ END AVATAR ═══ -->
 
     </div>
 
@@ -408,7 +406,6 @@
         <h3 class="text-[1.1rem] font-bold mb-2" style="color:var(--white)">Project PBL — Semester 1</h3>
         <p class="text-sm leading-relaxed mb-4" style="color:var(--muted)">
           Pengajuan Dokumen Warga Digital adalah aplikasi web yang saya kembangkan untuk mempermudah proses administrasi masyarakat secara online. Sistem ini memungkinkan pengguna mengajukan berbagai dokumen secara digital dengan proses yang terstruktur, efisien, dan transparan.
-          Dibangun menggunakan teknologi web modern, aplikasi ini mengintegrasikan fitur manajemen data, validasi form, serta alur pengajuan yang terorganisir untuk meningkatkan pengalaman pengguna.
         </p>
         <div class="flex flex-wrap gap-1">
           <span class="tech-chip" style="color:#FBBF24;background:rgba(247,147,79,0.1);border:1px solid rgba(247,147,79,0.25)">PHP</span>
@@ -419,7 +416,7 @@
         </div>
       </div>
 
-      <!-- Project 5  -->
+      <!-- Project 5 -->
       <div class="card-hover p-6 rounded-2xl relative overflow-hidden" style="background:var(--surface);border:1px solid rgba(236,72,153,0.3)"
            data-aos="fade-up" data-aos-delay="300">
         <div style="position:absolute;top:0;right:0;width:8rem;height:8rem;border-radius:50%;filter:blur(40px);opacity:0.12;background:#EC4899;transform:translate(30%,-30%);pointer-events:none"></div>
@@ -521,6 +518,7 @@
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent)"></span> CodeIgniter</span>
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent2)"></span> React.js</span>
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent2)"></span> Node.js</span>
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent2)"></span> Express.js</span>
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent3)"></span> MySQL</span>
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent3)"></span> Git & GitHub</span>
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:#FBBF24"></span> Tailwind CSS</span>
@@ -528,7 +526,6 @@
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:#F7934F"></span> REST API</span>
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:#F7934F"></span> Postman</span>
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent)"></span> VS Code</span>
-
         </div>
       </div>
 
@@ -762,8 +759,6 @@
 <!-- ═══════════════ SCRIPTS ═══════════════ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="assets/js/main.js"></script>
-
-
 
 </body>
 </html>
