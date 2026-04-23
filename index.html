@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dimas Prasetiyo — Web Developer</title>
 
-  <!-- css eskternal -->
-   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- CSS Eksternal -->
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -38,7 +38,6 @@
       }
     }
   </script>
-
 </head>
 <body class="relative">
 
@@ -61,42 +60,53 @@
         <a href="#skills"    class="nav-link">Skills</a>
         <a href="#contact"   class="nav-link">Contact</a>
         <a href="mailto:ddimasddpprasetiyo@gmail.com" class="hire-btn">Hire Me</a>
-        <button class="theme-toggle-btn" aria-label="Toggle theme"><i class="theme-icon fa fa-sun"></i></button>
+        <button class="theme-toggle-btn" aria-label="Toggle theme">
+          <i class="theme-icon fa fa-sun"></i>
+        </button>
       </div>
 
       <!-- Mobile: theme + hamburger -->
       <div class="md:hidden flex items-center gap-2">
-        <button class="theme-toggle-btn" aria-label="Toggle theme"><i class="theme-icon fa fa-sun"></i></button>
+        <button class="theme-toggle-btn" aria-label="Toggle theme">
+          <i class="theme-icon fa fa-sun"></i>
+        </button>
         <button id="hamburger" class="p-2 bg-transparent border-none cursor-pointer" style="color:var(--light)">
           <i class="fa fa-bars" style="font-size:1.1rem"></i>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" style="background:rgba(17,21,32,0.98);border:1px solid var(--border);border-radius:1rem;margin-top:0.5rem;margin-bottom:1rem">
+    <!-- Mobile Menu — BUG FIX: style dipindah ke CSS, warna ikut variable -->
+    <div id="mobile-menu">
       <div class="flex flex-col p-4 gap-1">
-        <a href="#home"      class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium no-underline transition-all duration-200" style="color:var(--light)">Home</a>
-        <a href="#education" class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium no-underline transition-all duration-200" style="color:var(--light)">Pendidikan</a>
-        <a href="#projects"  class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium no-underline transition-all duration-200" style="color:var(--light)">Project</a>
-        <a href="#skills"    class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium no-underline transition-all duration-200" style="color:var(--light)">Skills</a>
-        <a href="#contact"   class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium no-underline transition-all duration-200" style="color:var(--light)">Contact</a>
+        <a href="#home"      class="mobile-nav-link">Home</a>
+        <a href="#education" class="mobile-nav-link">Pendidikan</a>
+        <a href="#projects"  class="mobile-nav-link">Project</a>
+        <a href="#skills"    class="mobile-nav-link">Skills</a>
+        <a href="#contact"   class="mobile-nav-link">Contact</a>
       </div>
     </div>
   </div>
 </nav>
 
 <!-- ═══════════════ HERO ═══════════════ -->
-<section id="home" class="grid-pattern min-h-screen flex items-center relative" style="overflow:visible">
+<section id="home" class="grid-pattern min-h-screen flex items-center overflow-hidden relative">
+  <!-- Orbs -->
   <div class="orb" style="width:22rem;height:22rem;top:5rem;right:-3rem;background:var(--accent)"></div>
   <div class="orb" style="width:17rem;height:17rem;bottom:5rem;left:-2rem;background:var(--accent2);opacity:0.08"></div>
   <div class="orb" style="width:13rem;height:13rem;top:50%;left:30%;background:var(--accent3);opacity:0.06"></div>
 
   <div class="max-w-6xl mx-auto px-6 py-24 w-full relative" style="z-index:1">
+    <!--
+      BUG FIX: Layout hero
+      - Di mobile (default): kolom, avatar di atas, teks di bawah, semuanya center
+      - Di desktop (lg): baris, teks kiri, avatar kanan
+      - Ditambahkan overflow-x: hidden agar tidak ada scroll horizontal
+    -->
     <div class="flex flex-col lg:flex-row items-center gap-16">
 
       <!-- Text Content -->
-      <div class="flex-1 text-center lg:text-left order-2 lg:order-1">
+      <div class="flex-1 text-center lg:text-left order-2 lg:order-1 w-full min-w-0">
         <div class="section-label mb-5" data-aos="fade-up" data-aos-delay="100">
           <i class="fa fa-terminal mr-2"></i> Web Developer · Fullstack
         </div>
@@ -114,8 +124,8 @@
 
         <p class="text-sm leading-relaxed max-w-[31rem] mx-auto lg:mx-0 mb-8" style="color:var(--muted)"
            data-aos="fade-up" data-aos-delay="250">
-        Seorang web developer yang berfokus pada pembangunan aplikasi web modern, scalable, dan efisien. Berpengalaman dalam pengembangan fullstack, mencakup perancangan database, pengembangan backend, hingga implementasi antarmuka yang intuitif dan responsif.
-        Mengutamakan clean code, struktur sistem yang rapi, serta performa aplikasi untuk menghasilkan solusi digital yang optimal dan mudah dikembangkan.
+          Seorang web developer yang berfokus pada pembangunan aplikasi web modern, scalable, dan efisien. Berpengalaman dalam pengembangan fullstack, mencakup perancangan database, pengembangan backend, hingga implementasi antarmuka yang intuitif dan responsif.
+          Mengutamakan clean code, struktur sistem yang rapi, serta performa aplikasi untuk menghasilkan solusi digital yang optimal dan mudah dikembangkan.
         </p>
 
         <!-- Info Pills -->
@@ -137,10 +147,10 @@
         <!-- CTA Buttons -->
         <div class="flex flex-wrap gap-3 justify-center lg:justify-start"
              data-aos="fade-up" data-aos-delay="350">
-          <a href="https://github.com/Dimas01102" target="_blank" class="btn-primary">
+          <a href="https://github.com/Dimas01102" target="_blank" rel="noopener" class="btn-primary">
             <i class="fab fa-github"></i> GitHub
           </a>
-          <a href="https://www.linkedin.com/in/dimas-dwi-prasetiyo-13706820b/" target="_blank" class="btn-secondary li">
+          <a href="https://www.linkedin.com/in/dimas-dwi-prasetiyo-13706820b/" target="_blank" rel="noopener" class="btn-secondary li">
             <i class="fab fa-linkedin"></i> LinkedIn
           </a>
           <a href="#contact" class="btn-secondary ct">
@@ -149,43 +159,41 @@
         </div>
       </div>
 
-      <!-- ═══ AVATAR — FIXED MOBILE ═══ -->
+      <!--
+        Avatar — BUG FIX:
+        - Gunakan class .avatar-outer-wrapper dari CSS (bukan inline style)
+        - Overflow: visible agar badges tidak terpotong
+        - flex-shrink-0 agar tidak menyusut
+      -->
       <div class="flex-shrink-0 order-1 lg:order-2" data-aos="zoom-in" data-aos-delay="200">
-        <!-- 
-          Wrapper pakai class avatar-badge-container.
-          overflow: visible di CSS agar badge tidak terpotong.
-          Di mobile, padding dikurangi dan badge diposisikan ulang.
-        -->
-        <div class="avatar-badge-container">
+        <div class="avatar-outer-wrapper">
 
-          <!-- Bingkai foto utama -->
+          <!-- Frame foto -->
           <div class="avatar-frame-wrap">
             <div class="avatar-frame">
+              <!-- Shimmer overlay terpisah dari frame agar overflow tidak clip badges -->
+              <div class="avatar-shimmer"></div>
+
+              <!-- Corner ticks -->
               <span class="av-corner tl"></span>
               <span class="av-corner tr"></span>
               <span class="av-corner bl"></span>
               <span class="av-corner br"></span>
+
               <div class="avatar-frame-inner">
-                <img src="assets/images/foto.jpeg" alt="Dimas Dwi Prasetiyo" />
+                <img src="assets/images/foto.jpeg" alt="Dimas Dwi Prasetiyo" loading="lazy"/>
               </div>
             </div>
           </div>
 
-          <!-- Badge atas-kanan (absolute di desktop, inline di mobile) -->
-          <div class="avatar-badges-row">
-            <div class="badge-float-1 avatar-badge avatar-badge--top">
-              &lt;Fullstack/&gt;
-            </div>
+          <!-- Badge atas-kanan -->
+          <div class="badge-float badge-float-1">&lt;Fullstack/&gt;</div>
 
-            <!-- Badge bawah-kiri -->
-            <div class="badge-float-2 avatar-badge avatar-badge--bottom">
-              { PHP · Go · JS }
-            </div>
-          </div>
+          <!-- Badge bawah-kiri -->
+          <div class="badge-float badge-float-2">{ PHP · Go · JS }</div>
 
         </div>
       </div>
-      <!-- ═══ END AVATAR ═══ -->
 
     </div>
 
@@ -243,7 +251,7 @@
           <div class="timeline-dot"></div>
           <div class="flex-1 w-px mt-2" style="background:linear-gradient(to bottom,var(--accent),transparent)"></div>
         </div>
-        <div class="flex-1 pb-8">
+        <div class="flex-1 pb-8 min-w-0">
           <div class="card-hover p-6 rounded-2xl" style="background:var(--surface);border:1px solid var(--border)">
             <div class="flex flex-wrap justify-between gap-2 mb-3">
               <div>
@@ -274,7 +282,7 @@
         <div class="flex flex-col items-center flex-shrink-0">
           <div class="timeline-dot" style="background:linear-gradient(135deg,#7C5FF4,#00D4AA)"></div>
         </div>
-        <div class="flex-1">
+        <div class="flex-1 min-w-0">
           <div class="card-hover p-6 rounded-2xl" style="background:var(--surface);border:1px solid var(--border)">
             <div class="flex flex-wrap justify-between gap-2 mb-3">
               <div>
@@ -330,8 +338,8 @@
         <div class="flex items-start justify-between mb-4">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.2)">🚗</div>
           <div class="flex gap-2">
-            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
-            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
+            <a href="#" aria-label="GitHub" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Live Demo" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
           </div>
         </div>
         <h3 class="text-[1.1rem] font-bold mb-2" style="color:var(--white)">Sistem Rental Mobil</h3>
@@ -353,8 +361,8 @@
         <div class="flex items-start justify-between mb-4">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(124,95,244,0.12);border:1px solid rgba(124,95,244,0.2)">⚽</div>
           <div class="flex gap-2">
-            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
-            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
+            <a href="#" aria-label="GitHub" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Live Demo" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
           </div>
         </div>
         <h3 class="text-[1.1rem] font-bold mb-2" style="color:var(--white)">Booking Futsal</h3>
@@ -376,8 +384,8 @@
         <div class="flex items-start justify-between mb-4">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(0,212,170,0.12);border:1px solid rgba(0,212,170,0.2)">📋</div>
           <div class="flex gap-2">
-            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent3)'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
-            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent3)'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
+            <a href="#" aria-label="GitHub" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent3)'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Live Demo" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='var(--accent3)'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
           </div>
         </div>
         <h3 class="text-[1.1rem] font-bold mb-2" style="color:var(--white)">E-Quotation / RFQ System</h3>
@@ -399,13 +407,13 @@
         <div class="flex items-start justify-between mb-4">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(247,147,79,0.12);border:1px solid rgba(247,147,79,0.2)">🎓</div>
           <div class="flex gap-2">
-            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='#FBBF24'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
-            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='#FBBF24'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
+            <a href="#" aria-label="GitHub" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='#FBBF24'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Live Demo" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='#FBBF24'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
           </div>
         </div>
         <h3 class="text-[1.1rem] font-bold mb-2" style="color:var(--white)">Project PBL — Semester 1</h3>
         <p class="text-sm leading-relaxed mb-4" style="color:var(--muted)">
-          Pengajuan Dokumen Warga Digital adalah aplikasi web yang saya kembangkan untuk mempermudah proses administrasi masyarakat secara online. Sistem ini memungkinkan pengguna mengajukan berbagai dokumen secara digital dengan proses yang terstruktur, efisien, dan transparan.
+          Pengajuan Dokumen Warga Digital adalah aplikasi web yang dikembangkan untuk mempermudah proses administrasi masyarakat secara online. Sistem ini memungkinkan pengguna mengajukan berbagai dokumen secara digital dengan proses yang terstruktur, efisien, dan transparan.
         </p>
         <div class="flex flex-wrap gap-1">
           <span class="tech-chip" style="color:#FBBF24;background:rgba(247,147,79,0.1);border:1px solid rgba(247,147,79,0.25)">PHP</span>
@@ -417,14 +425,14 @@
       </div>
 
       <!-- Project 5 -->
-      <div class="card-hover p-6 rounded-2xl relative overflow-hidden" style="background:var(--surface);border:1px solid rgba(236,72,153,0.3)"
+      <div class="card-hover p-6 rounded-2xl relative overflow-hidden md:col-span-2 lg:col-span-1" style="background:var(--surface);border:1px solid rgba(236,72,153,0.3)"
            data-aos="fade-up" data-aos-delay="300">
         <div style="position:absolute;top:0;right:0;width:8rem;height:8rem;border-radius:50%;filter:blur(40px);opacity:0.12;background:#EC4899;transform:translate(30%,-30%);pointer-events:none"></div>
         <div class="flex items-start justify-between mb-4">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style="background:rgba(236,72,153,0.12);border:1px solid rgba(236,72,153,0.22)">🛒</div>
           <div class="flex gap-2">
-            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='#EC4899'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
-            <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='#EC4899'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
+            <a href="#" aria-label="GitHub" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='#EC4899'" onmouseout="this.style.color='var(--muted)'"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Live Demo" class="w-8 h-8 rounded-full flex items-center justify-center text-xs no-underline transition-colors duration-200" style="background:var(--card);color:var(--muted)" onmouseover="this.style.color='#EC4899'" onmouseout="this.style.color='var(--muted)'"><i class="fa fa-external-link-alt"></i></a>
           </div>
         </div>
         <h3 class="text-[1.1rem] font-bold mb-2" style="color:var(--white)">E-Commerce Platform</h3>
@@ -511,7 +519,7 @@
           <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(124,95,244,0.12);border:1px solid rgba(124,95,244,0.2)">
             <i class="fa fa-tools text-sm" style="color:var(--accent2)"></i>
           </div>
-          <h3 class="font-bold" style="color:var(--white)">Frameworks & Tools</h3>
+          <h3 class="font-bold" style="color:var(--white)">Frameworks &amp; Tools</h3>
         </div>
         <div class="flex flex-wrap gap-2">
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent)"></span> Laravel</span>
@@ -520,7 +528,7 @@
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent2)"></span> Node.js</span>
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent2)"></span> Express.js</span>
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent3)"></span> MySQL</span>
-          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent3)"></span> Git & GitHub</span>
+          <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:var(--accent3)"></span> Git &amp; GitHub</span>
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:#FBBF24"></span> Tailwind CSS</span>
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:#FBBF24"></span> Bootstrap</span>
           <span class="skill-badge"><span class="w-2 h-2 rounded-full inline-block" style="background:#F7934F"></span> REST API</span>
@@ -540,23 +548,38 @@
         <div class="flex flex-col gap-1">
           <div class="flex items-center gap-3 p-3 rounded-xl cursor-default transition-colors duration-200" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background:rgba(79,142,247,0.1)">🤝</div>
-            <div><div class="text-sm font-medium" style="color:var(--light)">Teamwork & Kolaborasi</div><div class="text-[0.72rem]" style="color:var(--muted)">Bekerja efektif dalam tim</div></div>
+            <div>
+              <div class="text-sm font-medium" style="color:var(--light)">Teamwork &amp; Kolaborasi</div>
+              <div class="text-[0.72rem]" style="color:var(--muted)">Bekerja efektif dalam tim</div>
+            </div>
           </div>
           <div class="flex items-center gap-3 p-3 rounded-xl cursor-default transition-colors duration-200" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background:rgba(124,95,244,0.1)">🧩</div>
-            <div><div class="text-sm font-medium" style="color:var(--light)">Problem Solving</div><div class="text-[0.72rem]" style="color:var(--muted)">Analitis dan berpikir kritis</div></div>
+            <div>
+              <div class="text-sm font-medium" style="color:var(--light)">Problem Solving</div>
+              <div class="text-[0.72rem]" style="color:var(--muted)">Analitis dan berpikir kritis</div>
+            </div>
           </div>
           <div class="flex items-center gap-3 p-3 rounded-xl cursor-default transition-colors duration-200" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background:rgba(0,212,170,0.1)">📚</div>
-            <div><div class="text-sm font-medium" style="color:var(--light)">Fast Learner</div><div class="text-[0.72rem]" style="color:var(--muted)">Adaptif terhadap teknologi baru</div></div>
+            <div>
+              <div class="text-sm font-medium" style="color:var(--light)">Fast Learner</div>
+              <div class="text-[0.72rem]" style="color:var(--muted)">Adaptif terhadap teknologi baru</div>
+            </div>
           </div>
           <div class="flex items-center gap-3 p-3 rounded-xl cursor-default transition-colors duration-200" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background:rgba(247,147,79,0.1)">💬</div>
-            <div><div class="text-sm font-medium" style="color:var(--light)">Komunikasi</div><div class="text-[0.72rem]" style="color:var(--muted)">Jelas dan efektif</div></div>
+            <div>
+              <div class="text-sm font-medium" style="color:var(--light)">Komunikasi</div>
+              <div class="text-[0.72rem]" style="color:var(--muted)">Jelas dan efektif</div>
+            </div>
           </div>
           <div class="flex items-center gap-3 p-3 rounded-xl cursor-default transition-colors duration-200" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background:rgba(79,142,247,0.1)">⏰</div>
-            <div><div class="text-sm font-medium" style="color:var(--light)">Manajemen Waktu</div><div class="text-[0.72rem]" style="color:var(--muted)">Disiplin dan tepat deadline</div></div>
+            <div>
+              <div class="text-sm font-medium" style="color:var(--light)">Manajemen Waktu</div>
+              <div class="text-[0.72rem]" style="color:var(--muted)">Disiplin dan tepat deadline</div>
+            </div>
           </div>
         </div>
       </div>
@@ -592,35 +615,35 @@
             <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.2)">
               <i class="fa fa-envelope" style="color:var(--accent)"></i>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 min-w-0">
               <div class="text-[0.7rem] mb-0.5" style="color:var(--muted)">Email</div>
-              <div class="text-sm font-medium" style="color:var(--light)">ddimasddpprasetiyo@gmail.com</div>
+              <div class="text-sm font-medium truncate" style="color:var(--light)">ddimasddpprasetiyo@gmail.com</div>
             </div>
-            <i class="fa fa-arrow-right text-xs" style="color:var(--muted)"></i>
+            <i class="fa fa-arrow-right text-xs flex-shrink-0" style="color:var(--muted)"></i>
           </a>
-          <a href="https://github.com/Dimas01102" target="_blank" class="contact-card">
+          <a href="https://github.com/Dimas01102" target="_blank" rel="noopener" class="contact-card">
             <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(124,95,244,0.12);border:1px solid rgba(124,95,244,0.2)">
               <i class="fab fa-github" style="color:var(--accent2)"></i>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 min-w-0">
               <div class="text-[0.7rem] mb-0.5" style="color:var(--muted)">GitHub</div>
-              <div class="text-sm font-medium" style="color:var(--light)">github.com/dimasprasetiyo</div>
+              <div class="text-sm font-medium truncate" style="color:var(--light)">github.com/Dimas01102</div>
             </div>
-            <i class="fa fa-arrow-right text-xs" style="color:var(--muted)"></i>
+            <i class="fa fa-arrow-right text-xs flex-shrink-0" style="color:var(--muted)"></i>
           </a>
-          <a href="https://www.linkedin.com/in/dimas-dwi-prasetiyo-13706820b/" target="_blank" class="contact-card">
+          <a href="https://www.linkedin.com/in/dimas-dwi-prasetiyo-13706820b/" target="_blank" rel="noopener" class="contact-card">
             <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(0,212,170,0.12);border:1px solid rgba(0,212,170,0.2)">
               <i class="fab fa-linkedin" style="color:var(--accent3)"></i>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 min-w-0">
               <div class="text-[0.7rem] mb-0.5" style="color:var(--muted)">LinkedIn</div>
-              <div class="text-sm font-medium" style="color:var(--light)">linkedin.com/in/dimasprasetiyo</div>
+              <div class="text-sm font-medium truncate" style="color:var(--light)">linkedin.com/in/dimas-dwi-prasetiyo</div>
             </div>
-            <i class="fa fa-arrow-right text-xs" style="color:var(--muted)"></i>
+            <i class="fa fa-arrow-right text-xs flex-shrink-0" style="color:var(--muted)"></i>
           </a>
         </div>
         <div class="flex items-center gap-4 p-4 rounded-2xl" style="background:rgba(79,142,247,0.05);border:1px solid rgba(79,142,247,0.15)">
-          <i class="fa fa-map-marker-alt text-lg" style="color:var(--accent)"></i>
+          <i class="fa fa-map-marker-alt text-lg flex-shrink-0" style="color:var(--accent)"></i>
           <div>
             <div class="text-[0.7rem]" style="color:var(--muted)">Lokasi</div>
             <div class="text-sm font-medium" style="color:var(--light)">Batam, Kepulauan Riau, Indonesia 🇮🇩</div>
@@ -649,11 +672,11 @@
           <div class="flex flex-col gap-4">
             <div>
               <label class="block text-[0.74rem] mb-1.5" style="color:var(--muted)">Nama Lengkap *</label>
-              <input type="text" id="contact-name" placeholder="John Doe" class="form-input"/>
+              <input type="text" id="contact-name" placeholder="John Doe" class="form-input" autocomplete="name"/>
             </div>
             <div>
               <label class="block text-[0.74rem] mb-1.5" style="color:var(--muted)">Email *</label>
-              <input type="email" id="contact-email" placeholder="john@example.com" class="form-input"/>
+              <input type="email" id="contact-email" placeholder="john@example.com" class="form-input" autocomplete="email"/>
             </div>
             <div>
               <label class="block text-[0.74rem] mb-1.5" style="color:var(--muted)">Subjek</label>
@@ -663,7 +686,7 @@
               <label class="block text-[0.74rem] mb-1.5" style="color:var(--muted)">Pesan *</label>
               <textarea id="contact-message" rows="4" placeholder="Halo Dimas, saya ingin..." class="form-input" style="resize:none"></textarea>
             </div>
-            <button id="submit-btn" onclick="submitForm()">
+            <button id="submit-btn" type="button" onclick="submitForm()">
               <i class="fa fa-paper-plane mr-2"></i> Kirim Pesan
             </button>
           </div>
@@ -732,9 +755,9 @@
       </div>
 
       <div class="flex items-center gap-2">
-        <a href="https://github.com/Dimas01102"      target="_blank" class="footer-social gh" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/dimas-dwi-prasetiyo-13706820b/" target="_blank" class="footer-social li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:ddimasddpprasetiyo@gmail.com"                    class="footer-social em" aria-label="Email"><i class="fa fa-envelope"></i></a>
+        <a href="https://github.com/Dimas01102" target="_blank" rel="noopener" class="footer-social gh" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/dimas-dwi-prasetiyo-13706820b/" target="_blank" rel="noopener" class="footer-social li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:ddimasddpprasetiyo@gmail.com" class="footer-social em" aria-label="Email"><i class="fa fa-envelope"></i></a>
       </div>
 
       <a href="#home" class="footer-top-btn">
