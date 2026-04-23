@@ -115,12 +115,10 @@ if (skillsSection) {
 }
 
 // ─── Dark / Light Mode ────────────────────────────────────
-// FIX: gunakan querySelectorAll karena ada 2 tombol (desktop + mobile)
-// dan sync semua icon sekaligus
 function applyTheme(mode) {
   if (mode === 'light') {
     document.body.classList.add('light-mode');
-    // Update semua icon (desktop + mobile)
+
     document.querySelectorAll('.theme-icon').forEach(icon => {
       icon.className = 'theme-icon fa fa-moon';
     });
